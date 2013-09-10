@@ -326,8 +326,7 @@ public class MAPCodec extends AbstractSoapInterceptor {
                         </section>
 
                         <section>
-                            <pre>
-                                <code>
+<pre><code>
 Name: http-/0.0.0.0:8443-295
 State: WAITING on java.util.concurrent.locks.ReentrantLock$NonfairSync@27c85959 owned by: http-/0.0.0.0:8443-266 Total blocked: 29  Total waited: 48
 
@@ -342,15 +341,12 @@ java.util.concurrent.locks.ReentrantLock.lock(ReentrantLock.java:290)
 org.jboss.security.xacml.core.JBossPDP.evaluate(JBossPDP.java:291)
 no.nav.modig.security.tilgangskontroll.policy.pdp.picketlink.PicketLinkDecisionPoint.evaluate(PicketLinkDecisionPoint.java:49)
 no.nav.modig.security.tilgangskontroll.policy.pep.PEPImpl.evaluate(PEPImpl.java:31)
-no.nav.modig.security.tilgangskontroll.policy.pep.PEPImpl.hasAccess(PEPImpl.java:43)
-no.nav.modig.security.tilgangskontroll.policy.pep.PEPImpl.assertAccess(PEPImpl.java:36)
-                                </code>
-                            </pre>
+</code></pre>
 
                         </section>
 
                         <section>
-                            <pre><code class="java">
+<pre><code class="java">
 Stuff stuff = null;
 lock.lock();  // linje 291
 
@@ -365,7 +361,7 @@ try {
 finally {
   lock.unlock();
 }
-                            </code></pre>
+</code></pre>
 
                         </section>
 
