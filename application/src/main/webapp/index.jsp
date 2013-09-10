@@ -6,7 +6,7 @@
 
 <body>
 
-    <h1>Applications</h1>
+    <h1>Welcome to this crappy and slow application</h1>
 
     <ul>
         <li><a href="banking/account">Online Banking (requires login)</a></li>
