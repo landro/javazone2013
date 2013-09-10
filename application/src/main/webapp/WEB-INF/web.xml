@@ -1,0 +1,89 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Enable JSP support in Jetty -->
+    <servlet>
+        <servlet-name>jsp</servlet-name>
+        <servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+    </servlet>
+
+    <!-- Make sure sessionids are never leaked to the URL -->
+    <session-config>
+        <session-timeout>10</session-timeout>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- Account servlet -->
+    <servlet>
+        <servlet-name>accountServlet</servlet-name>
+        <servlet-class>no.bekk.open.javazone.banking.servlets.AccountServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>accountServlet</servlet-name>
+        <url-pattern>/banking/account</url-pattern>
+    </servlet-mapping>
+
+    <!-- Login / Logout -->
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>no.bekk.open.javazone.login.servlets.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>loginErrorServlet</servlet-name>
+        <servlet-class>no.bekk.open.javazone.login.servlets.LoginErrorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>loginErrorServlet</servlet-name>
+        <url-pattern>/login-error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>logoutServlet</servlet-name>
+        <servlet-class>no.bekk.open.javazone.login.servlets.LogoutServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>logoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+
+    <!-- Protect account information -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>account</web-resource-name>
+            <url-pattern>/banking/account</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    
+    <security-role>
+        <role-name>user</role-name>
+    </security-role>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>Test Realm</realm-name>
+        <form-login-config>
+            <form-login-page>/login</form-login-page>
+            <form-error-page>/login-error</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
