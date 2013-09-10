@@ -5,3 +5,4 @@ gatling/.idea/
 gatling/*.iml
 gatling/target/
 gatling/Users/
+heap dumps/
