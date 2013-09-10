@@ -3,3 +3,5 @@ application/*.iml
 application/target/
 gatling/.idea/
 gatling/*.iml
+gatling/target/
+gatling/Users/
