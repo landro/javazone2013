@@ -30,8 +30,8 @@ class AccountSimulation extends Simulation {
         .get("/logout"))
 
 
-  //setUp(scn.inject(atOnce(1 user))).protocols(httpConf)
+  // setUp(scn.inject(atOnceUsers(1))).protocols(httpConf)
 
-  setUp(scn.inject(constantRate(5 usersPerSec) during (60 seconds))).protocols(httpConf)
+  setUp(scn.inject(constantUsersPerSec(5) during (60 seconds))).protocols(httpConf)
 
 }
