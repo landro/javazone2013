@@ -32,6 +32,11 @@ class AccountSimulation extends Simulation {
 
   // setUp(scn.inject(atOnceUsers(1))).protocols(httpConf)
 
-  setUp(scn.inject(constantUsersPerSec(5) during (60 seconds))).protocols(httpConf)
+
+  // thread dump demo
+//  setUp(scn.inject(constantUsersPerSec(20) during (600 seconds))).protocols(httpConf)
+
+  // momory leak demo
+  setUp(scn.inject(constantUsersPerSec(1) during (600 seconds))).protocols(httpConf)
 
 }

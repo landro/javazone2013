@@ -18,7 +18,7 @@ public class AccountSystem {
 
             Thread.sleep(100); // ms
 
-            cache.add(getAccountStatement(username));
+//            cache.add(getAccountStatement(username));
 
             return Math.rint(Math.random() * username.length() * 42);
 
