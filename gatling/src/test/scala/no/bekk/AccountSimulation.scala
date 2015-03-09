@@ -22,8 +22,8 @@ class AccountSimulation extends Simulation {
     .exec(
       http("Login to account")
         .post("/j_security_check")
-          .param("j_username", "${user}")
-          .param("j_password", "password")
+          .formParam("j_username", "${user}")
+          .formParam("j_password", "password")
         .check(regex("Account balance for user ${user}")))
     .exec(
       http("Logout")
