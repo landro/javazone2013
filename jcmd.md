@@ -7,7 +7,7 @@ Utilities in $JAVA_HOME/bin
 
 ### Start app
 
-    mvn clean compile exec:java¬
+    mvn clean compile exec:java
 
 
 ### Listing processes
