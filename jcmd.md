@@ -36,7 +36,7 @@ Utilities in $JAVA_HOME/bin
 
 ### Eclipse Memory Analyzer
 
-eclipse plugin (mat)
+[eclipse plugin (mat)](https://eclipse.org/mat/)
 
 ### Alternative commands
 
