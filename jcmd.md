@@ -30,7 +30,7 @@ Utilities in $JAVA_HOME/bin
 #### Heap dumping
 
     jcmd <pid> GC.class_histogram | more
-    jcmd <pid> GC.heap_dump /tmp/heap.bin
+    jcmd <pid> GC.heap_dump /tmp/heapdump.bin
 
 ### Eclipse Memory Analyzer
 
