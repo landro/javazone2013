@@ -23,11 +23,9 @@ Utilities in $JAVA_HOME/bin
 
     jcmd <pid> Thread.print 
 
-    jcmd <pid> JFR.start duration=10s filename=/tmp/myrecording.jfr
+### Garbage Collection
 
-### Java Mission Control
-
-    jmc
+    jstat -gc <pid> 2s 50 // 50 GC reports in 2s interval
 
 #### Heap dumping
 
@@ -41,6 +39,6 @@ Utilities in $JAVA_HOME/bin
 ### Alternative commands
 
     jstack
-    jmap -dump:format=b,file=/tmp/heap.bin 
+    jmap -dump:format=b,file=/tmp/heapdump.bin 
 
 
