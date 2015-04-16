@@ -1,8 +1,7 @@
 Utilities in $JAVA_HOME/bin
 ============================
 
-    cd $JAVA_HOME/bin
-    ls
+    ls $JAVA_HOME/bin
 
 
 ### Start app
